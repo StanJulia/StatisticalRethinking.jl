@@ -84,6 +84,7 @@ include("lppd.jl")
 include("logprob.jl")
 include("compare_models.jl")
 include("plot_models.jl")
+include("trankplot.jl")
 
 export
   sr_path,

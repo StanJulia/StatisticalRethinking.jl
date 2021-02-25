@@ -1,4 +1,4 @@
 using .DynamicHMC
-using .LogDensityProblems: logdensity, logdensity_and_gradient
+using .LogDensityProblems
 
 include("dhmc/hmc.jl")
