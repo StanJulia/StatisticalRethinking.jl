@@ -7,7 +7,13 @@
 
 ## Purpose of this package
 
-The StatisticalRethinking.jl v3 `package` contains functions comparable to the functions in the R package "rethinking" associated with the book [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) by Richard McElreath. 
+The StatisticalRethinking.jl v4 `package` contains functions comparable to the functions in the R package "rethinking" associated with the book [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) by Richard McElreath.
+
+StatisticalRethinking v4 is a breaking change from v4. Key diffirences between v3 and v4 are:
+
+1. All functions introduced in the main `src` directory are mcmc independent.
+2. If adaptation is needed, this in part of the `require` subdirectory of `src`.
+3. 
 
 These functions are used in the Pluto notebooks `projects` specifically intended for hands-on use while studying the book or taking the course.
 
@@ -60,17 +66,29 @@ Note 1: It is my intention to moce (stan based) quap() into a separate package S
 
 Note 2: Once all models are updated this will be released as v3.2.0. At the same time StanModels.jl will be updated.
 
-### Version 3.1.0
+### Version 4.0.0
+
+This will be a next step in restructuring the functions/methods in the `src` and `src/require` directories to achieve mcmc package independent.
+
+Stan related note: All quap() functionality related to Stan will be moved to a separate package [StanQuap.jl](https://github.com/StanJulia/StanQuap.jl). StanQuap.jl is *absolutely* not efficient. I see it as a compromis to use the Stan Language consistently in StatisticalRethinking based projects and at the same time learn the ins and outs of the Stan Language (I actually really like the Stan Language as a DSL).
+
+An inital version of `trunkplot()` (SR ch9) is under construction.
+
+### Version 3.2.x
+
+Introduction of ParetoSmoothedImportanceSampling.
+
+### Version 3.1.x
 
 Align (stanbased) quap with Turing quap. quap() now returns a NamedTuple that includes a field `distr` which represents the quadratic Normal (MvNormal) approximation.
 
 ### Version 3.0.0
 
-StatisticalRethinking.jl v3 is independent of the underlying mcmc package. All scripts previously in StatisticalRethinking.jl v2 holding the snippets have been replaced by Pluto notebooks in the above mentioned mcmc specific `project` repositories.
+StatisticalRethinking.jl v3 is an intermediate step in making StatisticalRethinking independent of the underlying mcmc package. All scripts previously in StatisticalRethinking.jl v2 holding the snippets have been replaced by Pluto notebooks in the above mentioned mcmc specific `project` repositories.
 
 Initially StatisticalRethinkingTuring.jl will lag StatisticalRethinkingStan.jl somewhat but later this year both will cover the same chapters.
 
-It is the intention to develop *tests* for StatisticalRethinking.jl v3 that work across the different mcmc implementations. This will limit dependencies to the `test/Project.toml`.
+It is the intention to develop *tests* for StatisticalRethinking.jl v4 that work across the different mcmc implementations. This will limit dependencies to the `test/Project.toml`.
 
 ### Version 2.2.9
 
