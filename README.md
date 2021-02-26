@@ -1,4 +1,4 @@
-# StatisticalRethinking v3
+# StatisticalRethinking v4
 
 
 | **Project Status**                                                               |  **Documentation**                                                               | **Build Status**                                                                                |
@@ -9,13 +9,15 @@
 
 The StatisticalRethinking.jl v4 `package` contains functions comparable to the functions in the R package "rethinking" associated with the book [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) by Richard McElreath.
 
-StatisticalRethinking v4 is a breaking change from v4. Key diffirences between v3 and v4 are:
+StatisticalRethinking v4 (SR4) is a breaking change from v4.
+
+Key diffirences between v3 and v4 are:
 
 1. All functions introduced in the main `src` directory are mcmc independent.
-2. If adaptation is needed, this in part of the `require` subdirectory of `src`.
-3. 
+2. If adaptation is needed, this is handled by methods in the `require` subdirectory of `src`.
+3. SR4 will use updated versions of several StanJulia packages, e.g. StanQuap.jl, StanSample.jl, etc..
 
-These functions are used in the Pluto notebooks `projects` specifically intended for hands-on use while studying the book or taking the course.
+The functions in SR4 are used in the Pluto notebooks `projects` specifically intended for hands-on use while studying the book or taking the course.
 
 To work through the StatisticalRethinking book using Julia and Stan, download `project` [StatisticalRethinkingStan.jl](https://github.com/StatisticalRethinkingJulia/StatisticalRethinkingStan.jl) and open one of the chapter Pluto notebooks.
 
