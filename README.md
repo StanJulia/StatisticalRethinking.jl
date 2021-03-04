@@ -39,7 +39,7 @@ The availablility of DynamicHMC, the huge progress made by the Turing.jl team ov
 
 An early, experimental version of [StructuralCausalModels.jl](https://github.com/StatisticalRethinkingJulia/StructuralCausalModels.jl) is also included as a dependency in the StatisticalRethinking.jl v3 package. In the meantime I will definitely keep my eyes on [Omega.jl](https://github.com/zenna/Omega.jl) and [CausalInference.jl](https://github.com/mschauer/CausalInference.jl). StructuralCausalModels does provide ways to convert DAGs to Daggity and ggm formats.
 
-Also now added as a dependency is [ParetoSmoothedImportanceSampling.jl](https://github.com/StatisticalRethinkingJulia/ParetoSmoothedImportanceSampling.jl) which provides PSIS and WAIC statistics. From chapter 7 onwards these are used in StatisticalRethinking.
+Also now added as a dependency is [StatsModelComparisons.jl](https://github.com/StatisticalRethinkingJulia/StatsModelComparisons.jl) which provides PSIS and WAIC statistics. From chapter 7 onwards these are used in StatisticalRethinking.
 
 Finally, for a good while I have been looking for a great statistics book using Julia as kind of an introductory text to StatisticalRethinking and I believe the first couple of chapters in an upcoming book [Statistics with Julia](https://statisticswithjulia.org/index.html) by Yoni Nazarathy and Hayden Klok are exactly that.
 
@@ -48,6 +48,8 @@ As [StatisticalRethinking](https://github.com/StatisticalRethinkingJulia) v3 is 
 After chapter 4, `Statistics with Julia` follows the frequentionist approach while `Statistical Rethinking` opts for the Bayesian approach. Most of the material in chapters 5 and 6 of `Statistics with Julia` is therefore also covered using a more Bayesian perspective in the early chapters of the notebook projects [StatisticalRethinkingStan](https://github.com/StatisticalRethinkingJulia/StatisticalRethinkingStan.jl) and [StatisticalRethinkingTuring](https://github.com/StatisticalRethinkingJulia/StatisticalRethinkingTuring.jl). 
 
 ## Versions
+
+A v4.0.0 is under development but will rely on changes in the StanJulia set of packages.
 
 ### Version 3.2.0
 
@@ -64,6 +66,7 @@ After chapter 4, `Statistics with Julia` follows the frequentionist approach whi
 - Start Updating notebooks in ch 2-8 using new quap()
 - Redoing and updating the models in the models subdirectory
 
+### Version 3.1.0
 Note 1: It is my intention to moce (stan based) quap() into a separate package StanQuap.jl once I'm satified with its features and stability. Likely in v3.3.
 
 Note 2: Once all models are updated this will be released as v3.2.0. At the same time StanModels.jl will be updated.
@@ -86,11 +89,9 @@ Align (stanbased) quap with Turing quap. quap() now returns a NamedTuple that in
 
 ### Version 3.0.0
 
-StatisticalRethinking.jl v3 is an intermediate step in making StatisticalRethinking independent of the underlying mcmc package. All scripts previously in StatisticalRethinking.jl v2 holding the snippets have been replaced by Pluto notebooks in the above mentioned mcmc specific `project` repositories.
 
 Initially StatisticalRethinkingTuring.jl will lag StatisticalRethinkingStan.jl somewhat but later this year both will cover the same chapters.
 
-It is the intention to develop *tests* for StatisticalRethinking.jl v4 that work across the different mcmc implementations. This will limit dependencies to the `test/Project.toml`.
 
 ### Version 2.2.9
 
